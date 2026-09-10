@@ -1,29 +1,30 @@
 import React from 'react';
-import { Button } from './Button';
+import { Checkout } from './Checkout';
 
 export default {
-  title: 'Components/Button',
-  component: Button,
+  title: 'Default/Checkout',
+  component: Checkout,
   tags: ['autodocs'],
   argTypes: {
     variant: {
       control: { type: 'select' },
       options: ['primary', 'secondary'],
-      description: 'Variante visuelle du bouton',
+      description: 'Variante visuelle du composant',
     },
     children: {
       control: 'text',
-      description: 'Texte ou contenu du bouton',
+      description: 'Texte ou contenu du composant',
     },
     onClick: { action: 'clicked' },
   },
 };
 
 // Story principale (Variante par défaut)
+
 export const Primary = {
   args: {
     variant: 'primary',
-    children: 'Bouton Principal',
+    children: 'Composant Principal',
   },
 };
 
@@ -31,14 +32,6 @@ export const Primary = {
 export const Secondary = {
   args: {
     variant: 'secondary',
-    children: 'Bouton Secondaire',
-  },
-};
-
-// Exemple d'état ou combinaison personnalisée
-export const LongText = {
-  args: {
-    variant: 'primary',
-    children: 'En savoir plus sur nos fonctionnalités',
+    children: 'Composant Secondaire',
   },
 };
