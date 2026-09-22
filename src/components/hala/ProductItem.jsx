@@ -1,8 +1,22 @@
-import React from 'react';
+import React from "react";
 
-export function ProductItem({ }) {
+import "./ProductItemComponents/ProductItem.css";
+import ProductPicturesPanel from "./ProductItemComponents/ProductPicturesPanel"
+import ProductDetailsPanel from "./ProductItemComponents/ProductDetailsPanel"
 
-  return (
-    <>TODO: ProductItem implementation</>
-  );
+function ProductPanels() {
+	return (
+		<div className="productPanels">
+			<ProductPicturesPanel />
+			<ProductDetailsPanel />
+		</div>
+	)
+}
+
+export function ProductItem() {
+	return (
+		<div className="productItem">
+			<ProductPanels />
+		</div>
+	);
 }
