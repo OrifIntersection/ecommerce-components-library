@@ -1,0 +1,90 @@
+{
+    "products": [
+        {
+            "id": "RBX73LMNQA007",
+            "attributes": {
+                "category": "Rayban Seeker ",
+                "articleName": "Seeker 2 UNC White Solaris +",
+                "description": "Inspirées par les lignes épurées des engins d'exploration spatiale et la pureté des sommets enneigés, les lunettes Seeker 2 UNC White Solaris+ transcendent le simple accessoire pour devenir un outil de perception augmentée. Leur monture, d’un blanc absolu et micro-brossé, captive la lumière pour révéler une texture presque minérale, tandis que leur design aérodynamique épouse les courbes du visage avec une légèreté désarmante.",
+                "price": "259,99 CHF",
+                "nbArticle": "IM4135-001",
+                "origin": "Chine",
+                "disponibility": 0,
+                "image":"public/images/articles/Lunette_Mnoir_Vbleudegradeblanc.png"
+            }
+        },
+        {
+            "id": "RBX92KDLSA001",
+            "attributes": {
+                "category": "Rayban Seeker",
+                "articleName": "Seeker Nebula Chrome +",
+                "description": "La Nebula Chrome+ capture l’essence des voiles stellaires : une monture chromée irisée qui change subtilement de teinte selon l’angle de la lumière. Les verres Solaris+ filtrent les reflets agressifs tout en amplifiant les micro-contrastes, offrant une vision presque holographique.",
+                "price": "289,99 CHF",
+                "nbArticle": "RB-NEB-002",
+                "origin": "Japon",
+                "disponibility": 1,
+                "image":"public/images/articles/lunettes_Mgris_Vbleu.png"
+            }
+        },
+        {
+            "id": "DRB21MOKS002",
+            "attributes": {
+                "category": "Dayana Robert",
+                "articleName": "Aurora SoftGold Edition",
+                "description": "L’Aurora SoftGold Edition évoque les premières lueurs du matin : une monture en alliage doré mat, douce au toucher, et des verres légèrement ambrés qui enveloppent le regard d’une chaleur diffuse. Pensées pour les esprits créatifs, elles subliment les couleurs naturelles.",
+                "price": "319,00 CHF",
+                "nbArticle": "DR-AUR-021",
+                "origin": "Italie",
+                "disponibility": 3
+            }
+        },
+        {
+            "id": "RBX77SKYBL003",
+            "attributes": {
+                "category": "Rayban Seeker",
+                "articleName": "Seeker Skyforge Arctic",
+                "description": "Forgées dans un composite inspiré des alliages cryogéniques, les Skyforge Arctic présentent une monture bleu polaire translucide. Leur structure semi-flexible absorbe les micro-vibrations, offrant un confort absolu même en mouvement.",
+                "price": "249,50 CHF",
+                "nbArticle": "RB-SKY-003",
+                "origin": "Corée du Sud",
+                "disponibility": 2
+            }
+        },
+        {
+            "id": "DRB11CRYST004",
+            "attributes": {
+                "category": "Dayana Robert",
+                "articleName": "CrystalWave Opaline",
+                "description": "Les CrystalWave Opaline jouent avec la lumière comme une pierre précieuse. Leur monture opaline semi-transparente révèle des reflets internes subtils, tandis que les verres haute clarté amplifient la netteté des contours.",
+                "price": "279,99 CHF",
+                "nbArticle": "DR-CW-004",
+                "origin": "France",
+                "disponibility": 1
+            }
+        },
+        {
+            "id": "RBX55SOLAR005",
+            "attributes": {
+                "category": "Rayban Seeker",
+                "articleName": "Seeker SolarStorm Black+",
+                "description": "Inspirées des tempêtes solaires, les SolarStorm Black+ arborent une monture noire profonde avec des micro-particules métalliques intégrées. Les verres Solaris+ renforcent la perception des zones d’ombre, idéales pour les environnements urbains contrastés.",
+                "price": "299,00 CHF",
+                "nbArticle": "RB-SS-005",
+                "origin": "USA",
+                "disponibility": 4
+            }
+        },
+        {
+            "id": "DRB88LUMEN006",
+            "attributes": {
+                "category": "Dayana Robert",
+                "articleName": "LumenFlow RoseQuartz",
+                "description": "La LumenFlow RoseQuartz combine une monture rose quartz satinée avec des verres luminescents qui réagissent légèrement aux variations de luminosité. Une pièce pensée pour les personnalités lumineuses et les ambiances douces.",
+                "price": "239,99 CHF",
+                "nbArticle": "DR-LF-006",
+                "origin": "Portugal",
+                "disponibility": 0
+            }
+        }
+    ]
+}

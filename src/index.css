@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@theme {
+    --color-green-box: oklch(96.7% 0.067 122.328);
+    --color-green-border: oklch(64.8% 0.2 131.684);
+    --color-green-text: oklch(64.8% 0.2 131.684);
+
+    --color-red-box: oklch(88.5% 0.062 18.334);
+    --color-red-border: oklch(39.6% 0.141 25.723);
+}
