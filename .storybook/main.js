@@ -1,4 +1,3 @@
-
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
   "stories": [
@@ -13,6 +12,9 @@ const config = {
     "@storybook/addon-onboarding"
   ],
   "framework": "@storybook/react-vite",
-  "staticDirs": ["../public"]
+  "staticDirs": [
+    "../public",
+    "../src"
+  ]
 };
 export default config;

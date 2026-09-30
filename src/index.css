@@ -1,10 +1,58 @@
 @import "tailwindcss";
+@import "./components/faya/assets/fonts/font.css";
 
 @theme {
-    --color-green-box: oklch(96.7% 0.067 122.328);
-    --color-green-border: oklch(64.8% 0.2 131.684);
-    --color-green-text: oklch(64.8% 0.2 131.684);
+  --font-sans: "Inter", sans-serif;
 
-    --color-red-box: oklch(88.5% 0.062 18.334);
-    --color-red-border: oklch(39.6% 0.141 25.723);
+  /* Add another @font-face, then use it with the generated font-newFont class. */
+  --font-newFont: "MonAutrePolice", serif;
+
+  --color-green-box: oklch(96.7% 0.067 122.328);
+  --color-green-border: oklch(64.8% 0.2 131.684);
+  --color-green-text: oklch(64.8% 0.2 131.684);
+
+  --color-blue-box: oklch(88.5% 0.062 250.334);
+  --color-blue-border: oklch(39.6% 0.141 255.723);
+  --color-blue-text: oklch(20% 0.03 260);
+
+}
+
+@layer base {
+
+  html,
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .tooltip-hover {
+    @apply invisible opacity-0 peer-hover:visible peer-hover:opacity-50 transition-opacity duration-200 delay-[600ms]
+  }
+
+  ;
+
+  .redAlert {
+    @apply bg-red-200 text-red-800 top-10 right-10 rounded-lg
+  }
+
+  ;
+
+  .deliveryReceiptHeight {
+    @apply bg-red-200
+  }
+
+  ;
+
+  .mainFont {
+    @apply bg-red-200
+  }
+
+  ;
+
+  .secondaryFont {
+    @apply bg-red-200
+  }
+
+  ;
 }
