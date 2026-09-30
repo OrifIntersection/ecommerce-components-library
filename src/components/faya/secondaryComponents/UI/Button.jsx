@@ -38,4 +38,4 @@ const paddings = {
 };
 
 export default function Button({ width, p, className, title }) {
-    return (<button className={clsx("bg-[#3458c3] border border-[#5A77CC] active:bg-[#1c3581] text-white rounded transition-colors", widths[width], paddings[p], className)} > {title} </button>)};
+    return (<button className={clsx("bg-[#3458c3] border border-[#5A77CC] active:bg-[#1c3581] text-white rounded transition-colors", widths[width], paddings[p], className)}> {title} </button>)};

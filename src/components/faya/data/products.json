@@ -72,7 +72,8 @@
                 "price": "299,00 CHF",
                 "nbArticle": "RB-SS-005",
                 "origin": "USA",
-                "disponibility": 4
+                "disponibility": 4,
+                "image":"public/images/articles/lunettes_Mgris_Vbleu.png"
             }
         },
         {
