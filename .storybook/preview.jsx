@@ -1,4 +1,6 @@
 import '../src/index.css';
+import '../src/components/faya/index.css'
+import '../src/components/faya/assets/fonts/font.css'
 
 /** @type { import('@storybook/react-vite').Preview } */
 const preview = {

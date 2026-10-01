@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import "./assets/fonts/font.css";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+
+  /* Add another @font-face, then use it with the generated font-newFont class. */
+  --font-newFont: "MonAutrePolice", serif;
+
+  --color-blue-box: #3458c3;
+  --color-blue-border: #3458c3;
+  --color-blue-text: white; 
+/* 
+  --color-blue-box: oklch(88.5% 0.062 250.334);
+  --color-blue-border: oklch(39.6% 0.141 255.723);
+  --color-blue-text: oklch(20% 0.03 260); */
+
+  --color-components-bg: #fcfcfc;
+}
+
+
+@layer components {
+  /*
+    Yael classe de composant
+  */
+  .tooltip-hover {
+    @apply invisible opacity-0 peer-hover:visible peer-hover:opacity-50 transition-opacity duration-200 delay-[600ms]
+  }
+
+  ;
+
+  .redAlert {
+    @apply bg-red-200 text-red-800 top-10 right-10 rounded-lg
+  }
+
+  ;
+
+  .deliveryReceiptHeight {
+    @apply bg-red-200
+  }
+
+  ;
+
+  .mainFont {
+    @apply bg-red-200
+  }
+
+  ;
+
+  .secondaryFont {
+    @apply bg-red-200
+  }
+
+  ;
+}
