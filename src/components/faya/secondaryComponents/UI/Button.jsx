@@ -28,7 +28,7 @@ const rounded = {
 
 export default function Button({ width, p, className, title, radius = "md" }) {
     const radiusClass = rounded[radius] || rounded.md;
-    console.log("OK1")
+    console.log(radius, "radius")
     return (
         <button className={clsx("bg-[#3458c3] border border-[#5A77CC] active:bg-[#1c3581] text-white transition-colors", radiusClass, widths[width], paddings[p], className)}>
             {title}

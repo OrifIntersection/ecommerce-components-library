@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { TruckIcon, XMarkIcon, PlusIcon, MinusIcon } from '@heroicons/react/24/solid';
-import data from './data/products.json';
 import Button from './secondaryComponents/UI/button.jsx';
+import productInCart from './data/productsInCart.json';
 
 function Product({ id, index, USproductInCart, remove }) {
-  const [quantity, setQuantity] = useState("1");
-
-  const productData = data.products.find((product) => product.id === id);
+  const productData = USproductInCart.find((product) => product.id === id);
 
   if (!productData) return null;
 
   const { image, category, price, articleName } = productData.attributes;
-
+  const { quantity } = productData;
+  
   return (
-    <div className={`md:h-40 h-auto ${index === (USproductInCart.cart.length - 1) ? '' : 'border-b-[1px] pb-4'}`}>
+    <div className={`md:h-40 h-auto ${index === (USproductInCart.length - 1) ? '' : 'border-b-[1px] pb-4'}`}>
       <section className="flex flex-row items-center justify-center flex-nowrap lg:justify-start">
         <div className="md:w-40 w-20 pr-2">
           <img src={image} className="object-cover w-full h-full" alt="Article" />
@@ -24,9 +23,9 @@ function Product({ id, index, USproductInCart, remove }) {
           <section className="flex flex-row gap-3">
             <section className="font-bold text-xs md:text-lg">{price}</section>
             <section className='h-full w-20 flex items-center justify-center gap-2'>
-              <PlusIcon width="12px" />
+              <PlusIcon width="12px" onClick={() => {}} />
               <h2 className='text-sm leading-none'>{quantity}</h2>
-              <MinusIcon width="12px" />
+              <MinusIcon width="12px" onClick={() =>{}} />
             </section>
             {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -46,14 +45,12 @@ function Product({ id, index, USproductInCart, remove }) {
 
 export function Cart({ price = "200" }) {
   const [freeDelivery, setFreeDelivery] = useState(false);
-  const [USproductInCart, setUSproductInCart] = useState({
-    cart: ["RBX73LMNQA007", "DRB21MOKS002", "RBX55SOLAR005"]
-  });
+  const [USproductInCart, setUSproductInCart] = useState(productInCart.cart);
 
   const TVA = 8.1;
   const TVAPercent = TVA / 100;
   const subtotal = 20;
-  const deliveryCosts = freeDelivery ? 0 : 20;
+  const deliveryCosts = freeDelivery ? 0 : 8.22;
   const TOTAL = subtotal + deliveryCosts + (subtotal * TVAPercent);
 
   if (subtotal >= 50) {
@@ -61,16 +58,13 @@ export function Cart({ price = "200" }) {
   }
 
   const remove = (idToRemove) => {
-    setUSproductInCart((prev) => ({
-      ...prev,
-      cart: prev.cart.filter((itemId) => itemId !== idToRemove)
-    }));
+    setUSproductInCart((prev) => prev.filter((item) => item.id !== idToRemove));
   };
 
   return (
-    <div className="w-full h-full flex gap-10 bg-[#FFFFF] box-content md:my-20 font-sans">
-      <section className='w-full h-full flex flex-col align-center justify-center md:flex-row gap-10 mx-5 md:mx-140'>
-        <div className="md:w-[60%] w-[100%] h-fit p-5 rounded-2xl shadow-xl/20 md:shadow-md/30">
+    <div className="w-full h-full flex align-center justify-center gap-10 bg-[#FFFFF] box-content md:my-20 font-sans">
+      <section className='w-full h-full flex flex-col align-center justify-center md:flex-row gap-10 mx-5 md:mx-[20%]'>
+        <div className="md:w-[60%] w-auto h-fit p-5 rounded-2xl shadow-xl/20 md:shadow-md/30">
           {freeDelivery ? (
             <h1 className="flex w-full flex-row items-center justify-center md:justify-start border-3 ring-2 ring-blue-500 md:ring-4 md:ring-blue-800 bg-blue-box text-blue-text text-md md:text-xl rounded-md pl-3">
               Livraison offerte ! <TruckIcon className="w-12 pl-5 md:pl-2 md:w-10" />
@@ -87,8 +81,8 @@ export function Cart({ price = "200" }) {
           </section>
 
           <div className="flex flex-col w-full h-auto gap-4 pt-2">
-            {USproductInCart?.cart.map((id, index) => (
-              <Product id={id} key={id} index={index} USproductInCart={USproductInCart} remove={remove} />
+            {USproductInCart?.map((value, index) => (
+              <Product id={value.id} key={value.id} index={index} USproductInCart={USproductInCart} remove={remove} />
             ))}
           </div>
         </div>
@@ -99,13 +93,11 @@ export function Cart({ price = "200" }) {
           </section>
 
           <section className="flex flex-col gap-2 md:my-4 pb-4 md:pb-0">
-            {USproductInCart?.cart.map((id) => {
-              const matchedProduct = data.products.find((product) => product.id === id);
-              if (!matchedProduct) return null;
+            {USproductInCart?.map((item) => {
               return (
-                <div key={id} className="flex justify-between items-center text-sm md:text-base">
-                  <h2 className="font-bold text-md">{matchedProduct.attributes.articleName}</h2>
-                  <h2>{matchedProduct.attributes.price}</h2>
+                <div key={item.id} className="flex justify-between items-center text-sm md:text-base">
+                  <h2 className="font-bold text-md">{item.attributes.articleName}</h2>
+                  <h2>{item.attributes.price}</h2>
                 </div>
               );
             })}
