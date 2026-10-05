@@ -1,0 +1,14 @@
+{
+	"title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	"subtitle": "Phasellus eleifend porta ligula nec mattis.",
+	"price": 12,
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet dolor hendrerit, pulvinar ligula nec, ornare nisl. Vivamus id erat porta, ullamcorper mauris non, hendrerit felis. Nullam quis metus ultricies, sodales ex sit amet, convallis lorem. Nam augue quam, aliquam eget risus semper, feugiat vestibulum urna. In gravida urna in dapibus ornare. Quisque nibh orci, vehicula quis lacinia sit amet, elementum quis velit. Nunc eget massa enim. Donec in dui risus. Quisque id est fringilla, varius arcu quis, malesuada lorem. Donec non imperdiet enim. Nulla nec metus semper, egestas tortor non, dignissim nisi. Suspendisse potenti.",
+	"isFavorite": false,
+	"images": [
+		"https://picsum.photos/500",
+		"https://picsum.photos/550",
+		"https://picsum.photos/525",
+		"https://picsum.photos/575",
+		"https://picsum.photos/555"
+	]
+}
