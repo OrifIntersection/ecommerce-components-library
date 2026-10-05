@@ -56,7 +56,6 @@ function ProductPicturesSelected({ images, selectedImage, setSelectedImage }) {
 }
 
 export default function ProductPicturesPanel({ images }) {
-	console.log(images)
 	const [selectedImage, setSelectedImage] = useState(0);
 
 	return (
