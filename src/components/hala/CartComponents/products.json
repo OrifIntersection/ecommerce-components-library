@@ -1,0 +1,23 @@
+[
+	{
+		"title": "Article A",
+		"price": 12.95,
+		"image": "https://picsum.photos/500",
+		"quantity": 2,
+		"shown": true
+	},
+	{
+		"title": "Article B",
+		"price": 9.95,
+		"image": "https://picsum.photos/555",
+		"quantity": 1,
+		"shown": true
+	},
+	{
+		"title": "Article C",
+		"price": 15.95,
+		"image": "https://picsum.photos/550",
+		"quantity": 1,
+		"shown": true
+	}
+]

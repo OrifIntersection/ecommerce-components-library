@@ -72,10 +72,8 @@ body * {
 }
 
 .cartPanelArticleImage {
-	height: 100%;
-	aspect-ratio: 1 / 1;
-
-	background: white;
+	min-height: 100%;
+	aspect-ratio: 1/1;
 }
 
 .cartPanelArticleTitle {
@@ -165,6 +163,8 @@ body * {
 
 .summaryArticlePrice {
 	border-left: 2px solid #00008833;
+	min-width: 80px;
+	text-align: right;
 }
 
 .cartPanelSummaryBuy {
