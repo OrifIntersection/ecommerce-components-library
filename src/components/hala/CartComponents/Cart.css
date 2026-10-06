@@ -1,3 +1,7 @@
+/* REUSABLE CLASSES */
+/* ---------------- */
+/*                  */
+
 .border { 
 		border: 1px solid black;
 }
@@ -42,13 +46,18 @@ body * {
 	gap: 2%;
 }
 
+/*                    */
+/* ------------------ */
+/* PRODUCTS PANEL CSS */
+/* ------------------ */
+/*                    */
+
+
 .cart {
 	height: 95vh;
 	width: 100%;
 	max-height: 1080px;
 	max-width: 1920px;
-	min-height: 540px;
-	min-width: 1200px;
 	justify-self: center;
 }
 
@@ -59,9 +68,22 @@ body * {
 	height: 75%;
 }
 
+
 .cartPanelProducts {	
 	width: 55%;
 	height: 100%;
+}
+
+.cartAddProduct {
+	margin: 1%;
+	padding: 5px;
+	font-size: 16px;
+	border: solid 1px #00ff0088;
+	background: #00ff0033;
+}
+
+.cartAddProduct:hover {
+	background: #00ff0088;
 }
 
 .cartPanelArticle {
@@ -112,16 +134,26 @@ body * {
 	width: 32px;
 }
 
+.cartPanelArticleDelete:hover {
+	background: #ff333388;
+}
+
 .cartPanelArticleQuantity {
 	display: flex;
 	align-items: center;
+
+	overflow: hidden;
 	
 	height: 24px;
 	width: 75%;
 }
 
 .cartPanelArticleQuantity button {
-	width: 33%;
+	width: 34%;
+}
+
+.cartPanelArticleQuantity button:hover {
+	background: #88888855
 }
 
 .quantityValue {
@@ -130,7 +162,12 @@ body * {
 	align-content: center;
 }
 
+
+/*                   */
+/* ----------------- */
 /* SUMMARY PANEL CSS */
+/* ----------------- */
+/*                   */
 
 .cartPanelSummary {
 	width: 45%;
@@ -138,7 +175,7 @@ body * {
 }
 
 .cartPanelSummaryArticles {
-	height: 50%;
+	gap: 3px;
 }
 
 .cartPanelSummaryArticle {
@@ -182,3 +219,12 @@ body * {
 	font-size: 30px;
 	color: white;
 }
+
+.cartPanelSummaryBuy:hover {
+	background: #0000ffaa;
+	color: white;
+}
+
+
+/*                   */
+/* ----------------- */

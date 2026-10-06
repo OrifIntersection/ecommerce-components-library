@@ -1,43 +1,54 @@
-function CartPanelArticleImage({image}) {
-	return (
-		<img className='cartPanelArticleImage' src={image}/>
-	)
+function CartPanelArticleImage({ image }) {
+	return <img className="cartPanelArticleImage" src={image} />;
 }
 
-function CartPanelArticleTitle({title}) {
-	return (
-		<div className='cartPanelArticleTitle cartUnderline'>{title}</div>
-	)
+function CartPanelArticleTitle({ title }) {
+	return <div className="cartPanelArticleTitle cartUnderline">{title}</div>;
 }
 
-function CartPanelArticleDelete() {
+function CartPanelArticleDelete({ deleteProduct }) {
 	return (
-		<div className='cartPanelArticleDelete'>🗑</div>
-	)
+		<button className="cartPanelArticleDelete" onClick={deleteProduct}>
+			🗑
+		</button>
+	);
 }
 
-function CartPanelArticleInfo({totalPrice, quantity}) {
+function CartPanelArticleInfo({ totalPrice, quantity, increment, decrement }) {
 	return (
-		<div className='cartPanelArticleInfo articlePadding'>
-			<div className='cartPanelArticlePrice cartUnderline'>{totalPrice}</div>
-			<div className='cartPanelArticleQuantity cartBorder'>
-				<button >-</button>
-				<div className='quantityValue cartBackground'>{quantity}</div>
-				<button >+</button>
+		<div className="cartPanelArticleInfo articlePadding">
+			<div className="cartPanelArticlePrice cartUnderline">{totalPrice}</div>
+			<div className="cartPanelArticleQuantity cartBorder">
+				<button onClick={decrement}>-</button>
+				<div className="quantityValue cartBackground">{quantity}</div>
+				<button onClick={increment}>+</button>
 			</div>
 		</div>
-	)
+	);
 }
 
 export default function CartPanelArticle({ product }) {
-	const { image, totalPrice, title, quantity } = product;
-	
+	const {
+		image,
+		totalPrice,
+		title,
+		quantity,
+		deleteProduct,
+		incrQuantity,
+		decrQuantity,
+	} = product;
+
 	return (
-		<div className='cartPanelArticle cartGap articlePadding cartBackground'>
+		<div className="cartPanelArticle cartGap articlePadding cartBackground">
 			<CartPanelArticleImage image={image} />
 			<CartPanelArticleTitle title={title} />
-			<CartPanelArticleDelete />
-			<CartPanelArticleInfo totalPrice={totalPrice} quantity={quantity} />
+			<CartPanelArticleDelete deleteProduct={deleteProduct} />
+			<CartPanelArticleInfo
+				totalPrice={totalPrice}
+				quantity={quantity}
+				increment={incrQuantity}
+				decrement={decrQuantity}
+			/>
 		</div>
-	)
+	);
 }

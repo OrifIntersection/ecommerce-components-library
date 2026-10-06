@@ -18,7 +18,7 @@ export default function CartPanelSummary({ products }) {
 			<div className="cartUnderline cartTitle">Votre Commande</div>
 			<div className="cartPanelSummaryArticles cartBackground cartPadding cartPanelFlex cartGap">
 				{products.map((product) => (
-					<CartSummaryArticle product={product} key={product.title} />
+					<CartSummaryArticle product={product} key={product.id} />
 				))}
 			</div>
 			<PanelSummaryTotal

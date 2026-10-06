@@ -6,11 +6,31 @@ import CartPanelSummary from "./PanelSummaryComponents/CartPanelSummary.jsx";
 export default function CartPanels({ products: initialProducts }) {
 	const [products, setProducts] = useState(initialProducts);
 
-	function updateProductQuantity(title, quantity) {
+	function deleteProduct(id) {
 		return setProducts((prevProducts) =>
 			prevProducts.map((product) =>
-				product.title === title
-					? { ...product, quantity: Math.max(0, quantity) }
+				product.id === id
+					? { ...product, shown: false, quantity: 0 }
+					: product,
+			),
+		);
+	}
+	
+	function addProduct(id) {
+		return setProducts((prevProducts) =>
+			prevProducts.map((product) =>
+				product.id === id
+					? { ...product, shown: true, quantity: 1 }
+					: product,
+			),
+		);
+	}
+	
+	function updateProductQuantity(id, change) {
+		return setProducts((prevProducts) =>
+			prevProducts.map((product) =>
+				product.id === id
+					? { ...product, quantity: Math.max(1, product.quantity + change) }
 					: product,
 			),
 		);
@@ -19,13 +39,19 @@ export default function CartPanels({ products: initialProducts }) {
 	const productsWithTotals = products.map((p) => ({
 		...p,
 		totalPrice: (p.price * p.quantity).toFixed(2),
-		setQuantity: quantity => updateProductQuantity(p.title, quantity)
+		deleteProduct: () => deleteProduct(p.id),
+		addProduct: () => addProduct(p.id),
+		incrQuantity: () => updateProductQuantity(p.id, 1),
+		decrQuantity: () => updateProductQuantity(p.id, -1)
 	}));
+
+	const visibleProducts = productsWithTotals.filter((p) => p.shown && (p.quantity > 0))
+	const invisibleProducts = productsWithTotals.filter((p) => !p.shown && (p.quantity === 0))
 
 	return (
 		<div className="cartPanels cartGap ">
-			<CartPanelProducts products={productsWithTotals} />
-			<CartPanelSummary products={productsWithTotals} />
+			<CartPanelProducts products={visibleProducts} invisibleProducts={invisibleProducts} />
+			<CartPanelSummary products={visibleProducts} />
 		</div>
 	);
 }
