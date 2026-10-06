@@ -10,7 +10,9 @@ export default {
 
 export const Primary = {
   args: {
-    variant: 'primary',
-    children: 'Composant Principal',
-  },
+  name: 'Clavier',
+  price: 49.90,
+  image: 'https://via.placeholder.com/150',
+  onAddToCart: () => alert('Produit ajouté au panier'),
+},
 };
