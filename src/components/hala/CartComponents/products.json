@@ -1,0 +1,42 @@
+[
+	{
+		"id": "1000",
+		"title": "Article A",
+		"price": 12.95,
+		"image": "https://picsum.photos/500",
+		"quantity": 2,
+		"shown": true
+	},
+	{
+		"id": "1001",
+		"title": "Article B",
+		"price": 9.95,
+		"image": "https://picsum.photos/555",
+		"quantity": 1,
+		"shown": true
+	},
+	{
+		"id": "1002",
+		"title": "Article C",
+		"price": 15.95,
+		"image": "https://picsum.photos/550",
+		"quantity": 1,
+		"shown": true
+	},
+	{
+		"id": "1003",
+		"title": "Article D",
+		"price": 5.95,
+		"image": "https://picsum.photos/540",
+		"quantity": 0,
+		"shown": false
+	},	
+	{
+		"id": "1004",
+		"title": "Article E",
+		"price": 49.95,
+		"image": "https://picsum.photos/530",
+		"quantity": 0,
+		"shown": false
+	}
+]
