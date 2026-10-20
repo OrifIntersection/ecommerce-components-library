@@ -1,0 +1,47 @@
+{
+    "userId": "userId",
+    "cart": [
+        {
+            "id": "RBX73LMNQA007",
+            "quantity": 2,
+            "attributes": {
+                "category": "Rayban Seeker ",
+                "articleName": "Seeker 2 UNC White Solaris +",
+                "description": "Inspirées par les lignes épurées des engins d'exploration spatiale et la pureté des sommets enneigés, les lunettes Seeker 2 UNC White Solaris+ transcendent le simple accessoire pour devenir un outil de perception augmentée. Leur monture, d’un blanc absolu et micro-brossé, captive la lumière pour révéler une texture presque minérale, tandis que leur design aérodynamique épouse les courbes du visage avec une légèreté désarmante.",
+                "price": "259,99 CHF",
+                "nbArticle": "IM4135-001",
+                "origin": "Chine",
+                "disponibility": 0,
+                "image": "public/images/articles/Lunette_Mnoir_Vbleudegradeblanc.png"
+            }
+        },
+        {
+            "id": "DRB21MOKS002",
+            "quantity": 2,
+            "attributes": {
+                "category": "Dayana Robert",
+                "articleName": "Aurora SoftGold Edition",
+                "description": "L’Aurora SoftGold Edition évoque les premières lueurs du matin : une monture en alliage doré mat, douce au toucher, et des verres légèrement ambrés qui enveloppent le regard d’une chaleur diffuse. Pensées pour les esprits créatifs, elles subliment les couleurs naturelles.",
+                "price": "319,00 CHF",
+                "nbArticle": "DR-AUR-021",
+                "origin": "Italie",
+                "disponibility": 3,
+                "image": "public/images/articles/lunettes_Mnoir_Vgris.png"
+            }
+        },
+        {
+            "id": "RBX55SOLAR005",
+            "quantity": 1,
+            "attributes": {
+                "category": "Rayban Seeker",
+                "articleName": "Seeker SolarStorm Black+",
+                "description": "Inspirées des tempêtes solaires, les SolarStorm Black+ arborent une monture noire profonde avec des micro-particules métalliques intégrées. Les verres Solaris+ renforcent la perception des zones d’ombre, idéales pour les environnements urbains contrastés.",
+                "price": "299,00 CHF",
+                "nbArticle": "RB-SS-005",
+                "origin": "USA",
+                "disponibility": 4,
+                "image": "public/images/articles/lunettes_Mgris_Vbleu.png"
+            }
+        }
+    ]
+}
