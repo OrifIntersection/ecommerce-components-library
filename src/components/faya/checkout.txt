@@ -6,10 +6,17 @@ props :
     data --> jeu de données
 
 Données :
-data qui contient le cart actuel
+    data qui contient le cart actuel
 
 
 Logique:
-    - Bouton "Payer" --> Accéder au moyen de Paiement
+    - Bouton "Payer" 
+        --> Accéder au moyen de Paiement
+
+    - Bouton "Je souhaite" recevoir les newsletters 
+        --> Recoit les newsletters par email
+
+    - Bouton "Je souhaite que l'adresse de facturation soit la même que celle de livraison
+        --> La même adresse s'applique
     - Lien hypertexte "Retour au panier" --> Accéder au Cart
     - Inputs (avec autocomplétion)
