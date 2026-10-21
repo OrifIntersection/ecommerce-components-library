@@ -1,0 +1,15 @@
+CHECKOUT
+
+props : 
+    children --> Label du Bouton
+    handleClick --> Fonction du bouton payer 
+    data --> jeu de données
+
+Données :
+data qui contient le cart actuel
+
+
+Logique:
+    - Bouton "Payer" --> Accéder au moyen de Paiement
+    - Lien hypertexte "Retour au panier" --> Accéder au Cart
+    - Inputs (avec autocomplétion)

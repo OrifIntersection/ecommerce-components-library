@@ -7,19 +7,18 @@
   /* Add another @font-face, then use it with the generated font-newFont class. */
   --font-newFont: "MonAutrePolice", serif;
 
-  --color-blue-box: #2A4E7E;
+  /* Blue buttons */
+  /* --color-blue-box: #2A4E7E;
   --color-blue-border: #2A4E7E;
-  --color-blue-text: white;
+  --color-blue-text: white; */
 
-  --color-grey-background: #C9CED6;
-  --color-grey-background:
-
-  /* 
-  --color-blue-box: oklch(88.5% 0.062 250.334);
-  --color-blue-border: oklch(39.6% 0.141 255.723);
-  --color-blue-text: oklch(20% 0.03 260); */
-
-  --color-components-bg: #fcfcfc;
+  --color-blue-ice: #2A4E7E;
+  --color-blue-misty: #6F8FBF;
+  --color-white-smoke: #F5F5F5;
+  --color-white-snow: #F5F7FA;
+  --color-grey-rock: #C9CED6;
+  --color-grey-anthracite: #2E2E33;
+  --color-wood-light: #D8BFA3;
 }
 
 
