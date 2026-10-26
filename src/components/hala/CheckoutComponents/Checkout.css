@@ -1,0 +1,110 @@
+.checkout {
+	height: 95vh;
+	width: 100%;
+	max-width: 1920px;
+	max-height: 1080px;
+	justify-self: center;
+
+	display: flex;
+	border: 1px solid #00000032;
+	border-radius: 4px;
+
+}
+
+.checkoutFormPanel {
+	height: 100%;
+	width: 50%;
+	padding: 5%;
+}
+
+.checkoutFormPanel form {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+
+.checkoutFormSection {
+	font-size: 20px;
+	font-weight: 500;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+
+.checkoutFormField {
+	font-size: 16px;
+	font-weight: 350;
+	display: flex;
+	flex-direction: column;
+	padding: 1%;
+}
+
+.checkoutFormField label {
+	display: block;
+}
+
+.checkoutFormField input {
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid #00000032;
+	border-radius: 4px;
+
+}
+
+.checkoutFormFieldRow {
+	display: flex;
+	gap: 1%;
+}
+
+.checkoutFormFieldRow .checkoutFormField {
+	flex: 1;
+	min-width: 0;
+}
+
+/* --------------------------- */
+/* CHECKOUT RECAP PANEL STYLES */
+/* --------------------------- */
+
+.checkoutRecapPanel {
+	height: 100%;
+	width: 50%;
+
+	background: #337722cc;
+	display: flex;
+	flex-direction: column;
+	padding: 5%;
+	gap: 3%;
+
+	font-size: 20px;
+	font-weight: 500;
+	color: #ffffffcc;
+}
+
+.checkoutRecapArticles {
+	flex: 3;
+	display: flex;
+	flex-direction: column;
+	gap: 3%;
+	padding-bottom: 3%;
+	border-bottom: 1px solid #ffffffcc;
+}
+
+.checkoutRecapArticle {
+	height: 100%;
+	background: #ffffffcc;
+	border-radius: 4px;
+	overflow: hidden;
+
+	min-height: 120px;
+}
+
+
+.checkoutRecapTotals {
+	flex: 2;
+	display: flex;
+
+	flex-direction: column;
+	gap: 3%;
+}
