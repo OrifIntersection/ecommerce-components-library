@@ -1,5 +1,4 @@
 import { CheckoutRecapArticles } from "./CheckoutRecapComponents/CheckoutRecapArticles.jsx";
-import { CheckoutRecapArticle } from "./CheckoutRecapComponents/CheckoutRecapArticle.jsx";
 
 import {
   CheckoutRecapTotals,
@@ -8,14 +7,10 @@ import {
   CheckoutRecapTotal,
 } from "./CheckoutRecapComponents/CheckoutRecapTotals.jsx";
 
-export default function CheckoutRecapPanel({}) {
+export default function CheckoutRecapPanel({ articles }) {
   return (
     <div className="checkoutRecapPanel">
-      <CheckoutRecapArticles>
-        <CheckoutRecapArticle />
-        <CheckoutRecapArticle />
-        <CheckoutRecapArticle />
-      </CheckoutRecapArticles>
+      <CheckoutRecapArticles articles={articles} />
       <CheckoutRecapTotals>
         <CheckoutRecapSubtotal />
         <CheckoutRecapShipping />

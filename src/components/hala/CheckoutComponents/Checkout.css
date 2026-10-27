@@ -112,12 +112,44 @@
 }
 
 .checkoutRecapArticle {
-	height: 100%;
 	background: #ffffffcc;
 	border-radius: 4px;
 	overflow: hidden;
 
-	min-height: 120px;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 16px;
+
+	font-size: 16px;
+	font-weight: 350;
+	color: #000000cc;
+}
+
+.checkoutRecapArticleImage {
+	width: 64px;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	border-radius: 4px;
+}
+
+.checkoutRecapArticleTitle {
+	flex: 1;
+	font-weight: 500;
+}
+
+/* fixed widths keep the quantity and price columns aligned across articles */
+.checkoutRecapArticleQuantity {
+	width: 3ch;
+	text-align: center;
+	color: #00000080;
+}
+
+.checkoutRecapArticlePrice {
+	width: 7ch;
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+	font-weight: 500;
 }
 
 
