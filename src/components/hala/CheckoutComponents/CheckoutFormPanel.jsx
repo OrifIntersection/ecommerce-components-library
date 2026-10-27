@@ -17,6 +17,8 @@ import {
   CheckoutShippingSection,
 } from "./CheckoutFormComponents/CheckoutFormSection.jsx";
 
+import { CheckoutFormSubmit } from "./CheckoutFormComponents/CheckoutFormSubmit.jsx";
+
 export default function CheckoutFormPanel({ onSubmit }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(null);
@@ -58,10 +60,7 @@ export default function CheckoutFormPanel({ onSubmit }) {
             <CheckoutFormShipPost />
           </div>
         </CheckoutShippingSection>
-        <button type="submit" className="checkoutFormSubmit" disabled={isSubmitting}>
-          {isSubmitting ? "Processing..." : "Pay"}
-        </button>
-        {submitError && <p className="checkoutFormError">{submitError}</p>}
+        <CheckoutFormSubmit isSubmitting={isSubmitting} submitError={submitError} />
       </form>
     </div>
   );
