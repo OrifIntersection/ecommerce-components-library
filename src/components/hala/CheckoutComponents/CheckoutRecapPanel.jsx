@@ -1,17 +1,26 @@
+import { CheckoutRecapArticles } from "./CheckoutRecapComponents/CheckoutRecapArticles.jsx";
+import { CheckoutRecapArticle } from "./CheckoutRecapComponents/CheckoutRecapArticle.jsx";
+
+import {
+  CheckoutRecapTotals,
+  CheckoutRecapSubtotal,
+  CheckoutRecapShipping,
+  CheckoutRecapTotal,
+} from "./CheckoutRecapComponents/CheckoutRecapTotals.jsx";
+
 export default function CheckoutRecapPanel({}) {
   return (
     <div className="checkoutRecapPanel">
-      <div className="checkoutRecapArticles">
-        Your order
-        <div className="checkoutRecapArticle"></div>
-        <div className="checkoutRecapArticle"></div>
-        <div className="checkoutRecapArticle"></div>
-      </div>
-      <div className="checkoutRecapTotals">
-        <div className="checkoutSubtotal">Subtotal</div>
-        <div className="checkoutShipping">Shipping</div>
-        <div className="checkoutTotal">Total</div>
-      </div>
+      <CheckoutRecapArticles>
+        <CheckoutRecapArticle />
+        <CheckoutRecapArticle />
+        <CheckoutRecapArticle />
+      </CheckoutRecapArticles>
+      <CheckoutRecapTotals>
+        <CheckoutRecapSubtotal />
+        <CheckoutRecapShipping />
+        <CheckoutRecapTotal />
+      </CheckoutRecapTotals>
     </div>
   );
 }

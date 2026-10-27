@@ -25,7 +25,7 @@ export default function CheckoutFormPanel({ onSubmit }) {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    // Turns the named inputs into a plain object, e.g. { email: "...", cardNumber: "...", ... }
+    // extract all fields from the form
     const formData = Object.fromEntries(new FormData(event.target));
 
     setIsSubmitting(true);
