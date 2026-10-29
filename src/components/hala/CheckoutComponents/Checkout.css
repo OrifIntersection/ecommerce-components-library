@@ -160,3 +160,12 @@
 	flex-direction: column;
 	gap: 3%;
 }
+
+/* label on the left, amount on the right */
+.checkoutSubtotal,
+.checkoutShipping,
+.checkoutTotal {
+	display: flex;
+	justify-content: space-between;
+	font-variant-numeric: tabular-nums;
+}

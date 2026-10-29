@@ -1,6 +1,5 @@
 function CheckoutRecapArticle({ article }) {
-  const { image, title, quantity, price } = article;
-  const totalPrice = price * quantity;
+  const { image, title, quantity, price, totalPrice } = article;
 
   return (
     <div className="checkoutRecapArticle">
