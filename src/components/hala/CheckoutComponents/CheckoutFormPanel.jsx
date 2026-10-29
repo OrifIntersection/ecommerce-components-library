@@ -19,29 +19,18 @@ import {
 
 import { CheckoutFormSubmit } from "./CheckoutFormComponents/CheckoutFormSubmit.jsx";
 
-export default function CheckoutFormPanel({ onSubmit }) {
+export default function CheckoutFormPanel({ handleSubmit }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(null);
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-    // extract all fields from the form
-    const formData = Object.fromEntries(new FormData(event.target));
 
-    setIsSubmitting(true);
-    setSubmitError(null);
-    try {
-      await onSubmit(formData);
-    } catch (error) {
-      setSubmitError(error.message);
-    } finally {
-      setIsSubmitting(false);
-    }
+  function submitForm(event) {
+    handleSubmit(event, { setIsSubmitting, setSubmitError });
   }
 
   return (
     <div className="checkoutFormPanel">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={submitForm}>
         <CheckoutContactSection>
           <CheckoutFormEmail />
         </CheckoutContactSection>

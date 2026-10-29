@@ -5,10 +5,10 @@ import CheckoutRecapPanel from "./CheckoutComponents/CheckoutRecapPanel";
 import articles from "./CheckoutComponents/articles.json" with { type: "json" };
 
 
-export function Checkout({ onSubmit }) {
+export function Checkout({ handleSubmit }) {
   return (
     <div className="checkout">
-      <CheckoutFormPanel onSubmit={onSubmit} />
+      <CheckoutFormPanel handleSubmit={handleSubmit} />
       <CheckoutRecapPanel articles={articles} />
     </div>
   );
