@@ -1,5 +1,5 @@
 function CheckoutRecapArticle({ article }) {
-  const { image, title, quantity, price, totalPrice } = article;
+  const { image, title, quantity, totalPrice } = article;
 
   return (
     <div className="checkoutRecapArticle">
