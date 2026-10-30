@@ -1,0 +1,171 @@
+.checkout {
+	height: 95vh;
+	width: 100%;
+	max-width: 1920px;
+	max-height: 1080px;
+	justify-self: center;
+
+	display: flex;
+	border: 1px solid #00000032;
+	border-radius: 4px;
+
+}
+
+.checkoutFormPanel {
+	height: 100%;
+	width: 50%;
+	padding: 5%;
+}
+
+.checkoutFormPanel form {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+
+.checkoutFormSection {
+	font-size: 20px;
+	font-weight: 500;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+
+.checkoutFormField {
+	font-size: 16px;
+	font-weight: 350;
+	display: flex;
+	flex-direction: column;
+	padding: 1%;
+}
+
+.checkoutFormField label {
+	display: block;
+}
+
+.checkoutFormField input {
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid #00000032;
+	border-radius: 4px;
+
+}
+
+.checkoutFormFieldRow {
+	display: flex;
+	gap: 1%;
+}
+
+.checkoutFormFieldRow .checkoutFormField {
+	flex: 1;
+	min-width: 0;
+}
+
+.checkoutFormSubmit {
+	padding: 8px;
+	border: none;
+	border-radius: 4px;
+	background: #337722cc;
+	color: #ffffffcc;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.checkoutFormSubmit:disabled {
+	opacity: 0.5;
+	cursor: wait;
+}
+
+.checkoutFormError {
+	color: #cc2222;
+	font-size: 14px;
+}
+
+/* --------------------------- */
+/* CHECKOUT RECAP PANEL STYLES */
+/* --------------------------- */
+
+.checkoutRecapPanel {
+	height: 100%;
+	width: 50%;
+
+	background: #337722cc;
+	display: flex;
+	flex-direction: column;
+	padding: 5%;
+	gap: 16px;
+
+	font-size: 20px;
+	font-weight: 500;
+	color: #ffffffcc;
+}
+
+.checkoutRecapArticles {
+	flex: 3;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #ffffffcc;
+}
+
+.checkoutRecapArticle {
+	background: #ffffffcc;
+	border-radius: 4px;
+	overflow: hidden;
+
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 16px;
+
+	font-size: 16px;
+	font-weight: 350;
+	color: #000000cc;
+}
+
+.checkoutRecapArticleImage {
+	width: 64px;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	border-radius: 4px;
+}
+
+.checkoutRecapArticleTitle {
+	flex: 1;
+	font-weight: 500;
+}
+
+/* fixed widths keep the quantity and price columns aligned across articles */
+.checkoutRecapArticleQuantity {
+	width: 3ch;
+	text-align: center;
+	color: #00000080;
+}
+
+.checkoutRecapArticlePrice {
+	width: 7ch;
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+	font-weight: 500;
+}
+
+
+.checkoutRecapTotals {
+	flex: 2;
+	display: flex;
+
+	flex-direction: column;
+	gap: 3%;
+}
+
+/* label on the left, amount on the right */
+.checkoutSubtotal,
+.checkoutShipping,
+.checkoutTotal {
+	display: flex;
+	justify-content: space-between;
+	font-variant-numeric: tabular-nums;
+}

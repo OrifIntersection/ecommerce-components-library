@@ -1,8 +1,13 @@
-import React from 'react';
+import "./CheckoutComponents/Checkout.css";
+import CheckoutFormPanel from "./CheckoutComponents/CheckoutFormPanel";
+import CheckoutRecapPanel from "./CheckoutComponents/CheckoutRecapPanel";
 
-export function Checkout({ }) {
 
+export function Checkout({ handleSubmit, shippingFee, articles }) {
   return (
-    <>TODO: Checkout implementation</>
+    <div className="checkout">
+      <CheckoutFormPanel handleSubmit={handleSubmit} />
+      <CheckoutRecapPanel shippingFee={shippingFee} articles={articles} />
+    </div>
   );
 }
