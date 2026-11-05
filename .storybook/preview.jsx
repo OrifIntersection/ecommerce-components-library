@@ -3,10 +3,11 @@ import '../src/index.css';
 /** @type { import('@storybook/react-vite').Preview } */
 const preview = {
   parameters: {
+    layout: 'fullscreen',
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
 

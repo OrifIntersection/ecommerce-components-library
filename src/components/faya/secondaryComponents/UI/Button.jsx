@@ -29,7 +29,7 @@ const rounded = {
 export default function Button({ width, p, className, title, radius = "md" }) {
     const radiusClass = rounded[radius] || rounded.md;
     return (
-        <button className={clsx("bg-[#3458c3] border border-[#5A77CC] active:bg-[#1c3581] text-white transition-colors", radiusClass, widths[width], paddings[p], className)}>
+        <button className={clsx("border border-[#5A77CC] bg-[#3458c3] hover:bg-[#4770d8] active:bg-[#29469f] text-white transition-colors", radiusClass, widths[width], paddings[p], className)}>
             {title}
         </button>
     );

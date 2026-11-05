@@ -1,5 +1,3 @@
-
-
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
   "stories": [
@@ -13,6 +11,18 @@ const config = {
     "@storybook/addon-docs",
     "@storybook/addon-onboarding"
   ],
-  "framework": "@storybook/react-vite"
+  "framework": "@storybook/react-vite",
+  async viteFinal(config){
+    return {
+      ...config,
+      server: {
+        ...config.server,
+        watch: {
+          userPolling:true,
+          interval:100
+        }
+      }
+    }
+  }
 };
 export default config;
