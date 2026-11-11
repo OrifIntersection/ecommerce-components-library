@@ -1,0 +1,32 @@
+[09:39:12.290] [INFO] storybook v10.6.0
+[09:39:16.910] [DEBUG] Getting package.json info for C:/Users/Yael/Documents/Informatique/Workspace/React/ecommerce-components-library/package.json...
+[09:39:16.949] [ERROR] [38;2;241;97;97mSB_CORE-SERVER_0002 (CriticalPresetLoadError): Storybook failed to load the following preset: @storybook/react-vite/preset.
+
+Please check whether your setup is correct, the Storybook dependencies (and their peer dependencies) are installed correctly and there are no package version clashes.
+
+If you believe this is a bug, please open an issue on Github.
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@storybook/react-vite' imported from C:\Users\Yael\node_modules\storybook\dist\_node-chunks\chunk-5G6TGQDE.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:255:9)
+    at packageResolve (node:internal/modules/esm/resolve:767:81)
+    at moduleResolve (node:internal/modules/esm/resolve:853:18)
+    at defaultResolve (node:internal/modules/esm/resolve:983:11)
+    at nextResolve (node:internal/modules/esm/hooks:748:28)
+    at Hooks.resolve (node:internal/modules/esm/hooks:240:30)
+    at MessagePort.handleMessage (node:internal/modules/esm/worker:199:24)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+    at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)
+
+More info: 
+[39m
+    at loadPreset (file:///C:/Users/Yael/node_modules/storybook/dist/_node-chunks/chunk-IQHYYTFR.js:13257:13)
+    at async Promise.all (index 0)
+    at async loadPresets (file:///C:/Users/Yael/node_modules/storybook/dist/_node-chunks/chunk-IQHYYTFR.js:13266:73)
+    at async getPresets (file:///C:/Users/Yael/node_modules/storybook/dist/_node-chunks/chunk-IQHYYTFR.js:13297:23)
+    at async buildDevStandalone (file:///C:/Users/Yael/node_modules/storybook/dist/core-server/index.js:9254:52)
+    at async withTelemetry (file:///C:/Users/Yael/node_modules/storybook/dist/_node-chunks/chunk-FTP3QZ7O.js:142:12)
+    at async dev (file:///C:/Users/Yael/node_modules/storybook/dist/bin/core.js:4906:3)
+    at async _Command.<anonymous> (file:///C:/Users/Yael/node_modules/storybook/dist/bin/core.js:5014:3)
+[09:39:16.962] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.
+[09:39:39.034] [PROMPT] Would you like to send anonymous crash reports to improve Storybook and fix bugs faster? {"choice":true}

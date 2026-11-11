@@ -1,8 +1,8 @@
-export default function Mastercard() {
+export default function Mastercard({width}) {
 	return (
 	<svg version="1.1"
 	 id="svg3409"
-	 xmlns="http://www.w3.org/2000/svg" width="999.2px" height="776px"
+	 xmlns="http://www.w3.org/2000/svg" width={width}
 	 viewBox="0 0 999.2 776" enable-background="new 0 0 999.2 776">
 	<path id="XMLID_1775_" inkscape:connector-curvature="0" d="M181.1,774.3v-51.5c0-19.7-12-32.6-32.6-32.6
 		c-10.3,0-21.5,3.4-29.2,14.6c-6-9.4-14.6-14.6-27.5-14.6c-8.6,0-17.2,2.6-24,12v-10.3h-18v82.4h18v-45.5c0-14.6,7.7-21.5,19.7-21.5

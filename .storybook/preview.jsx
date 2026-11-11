@@ -3,7 +3,7 @@ import '../src/index.css';
 /** @type { import('@storybook/react-vite').Preview } */
 const preview = {
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
     controls: {
       matchers: {
         color: /(background|color)$/i,

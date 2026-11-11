@@ -5,6 +5,7 @@ import Checkbox from './secondaryComponents/UI/CheckBox.jsx';
 
 import AmericanExpress from '/public/logos/AmericanExpress.jsx';
 import Mastercard from '../../../public/logos/Mastercard.jsx';
+import Visa from '../../../public/logos/Visa.jsx';
 
 import './index.css';
 
@@ -19,10 +20,12 @@ function Contact({ forms, handleForms, category, handleChange, checked }) {
       <div className='w-[100%] p-2'>
         <input required type='mail' placeholder='Mail' value={forms[category].mail} name="mail" className='w-[100%] h-10 border border-gray-400 text-gray-600 p-2 rounded-md' onChange={modificationFormulaire} />
       </div>
-      <Checkbox children={'Je souhaite recevoir les newsletters'} inputClassName={null} onChange={handleChange} checked={checked}/>
+      <Checkbox children={'Je souhaite recevoir les newsletters'} inputClassName={null} onChange={handleChange} checked={checked} />
     </div>
   </>)
 }
+
+
 
 function UserForm({ handleForms, forms, title, category }) {
   const modificationFormulaire = (e) => {
@@ -58,6 +61,20 @@ function UserForm({ handleForms, forms, title, category }) {
       </div>
     </div>
   </>);
+}
+
+function PaymentIcons({ width }) {
+  return (<div className='flex flex-row gap-6 h-auto'>
+    <Visa width={width} />
+    <Mastercard width={width} />
+    <AmericanExpress width={width} />
+  </div>)
+}
+
+function CertificationArea({ }) {
+  return (<>
+  
+  </>)
 }
 
 export function Checkout({ children, handleClick, data }) {
@@ -141,17 +158,22 @@ export function Checkout({ children, handleClick, data }) {
 
   return (
     <div className='min-h-[100%] h-auto flex flex-col md:flex-row w-full min-h-screen overflow-x-hidden box-content '>
-      <Mastercard/>
       <section className='flex items-center justify-center w-1/2 min-h-full'>
         <div className='self-start max-w-200 p-5 pt-20 rounded-2xl'>
-          <Contact forms={forms} handleForms={handleForms} category={'contact'} handleChange={handleCheckbox1} checked={isCheckboxActiveNewsletters}/>
+          <Contact forms={forms} handleForms={handleForms} category={'contact'} handleChange={handleCheckbox1} checked={isCheckboxActiveNewsletters} />
           <UserForm forms={forms} handleForms={handleForms} category={'payment'} title={'Informations de paiement'} />
           <Checkbox children={'Je souhaite que l’adresse de facturation soit la même que celle de livraison'} onChange={handleCheckbox2} checked={isCheckboxActiveFacturation} />
-          {isCheckboxActiveFacturation ? null : <UserForm forms={forms} handleForms={handleForms} category={'facturation'} title={'Informations de facturation'} />}
+          {isCheckboxActiveFacturation ? null : <>
+            <UserForm forms={forms} handleForms={handleForms} category={'facturation'} title={'Informations de facturation'} />
+            <UserForm forms={forms} handleForms={handleForms} category={'facturation'} title={'Informations de facturation'} />
+            <UserForm forms={forms} handleForms={handleForms} category={'facturation'} title={'Informations de facturation'} />
+          </>}
         </div>
       </section>
-      <section className='flex items-center justify-center w-1/2 min-h-full border-l border-gray-300 bg-white-smoke'>
-        <div className="self-start md:w-[80%] h-fit pt-20 p-5 rounded-2xl">
+      {/* min-h-full */}
+      <section className='flex items-center justify-center w-1/2 h-screen border-l border-gray-300 bg-white-smoke'>
+        {/* self-start */}
+        <div className="self-start top-0 sticky md:w-[80%] h-fit pt-20 p-5 rounded-2xl">
           <div className='flex flex-col gap-3'>
             <section className="mb-2">
               <h1 className="font-bold md:text-2xl">Détails de la commande</h1>
@@ -174,6 +196,7 @@ export function Checkout({ children, handleClick, data }) {
                 );
               })}
             </section>
+
             <section className="flex flex-row justify-between font-bold  md:text-xl">
               <h2>Sous-total</h2>
               <h1>{subtotal} CHF</h1>
@@ -191,6 +214,9 @@ export function Checkout({ children, handleClick, data }) {
           </div>
           <section className="pt-4">
             <Button width="full" p="sm" title={children} onClick={handleClick} />
+          </section>
+          <section className='pt-4'>
+            <PaymentIcons width="80px" />
           </section>
         </div>
       </section>
@@ -324,10 +350,10 @@ export function Checkout({ children, handleClick, data }) {
 //       </section>
 //       <section className='
 //       flex flex-col align-center justify-center
-//         // sticky   
+//         // sticky
 //       w-1/2 min-h-full border-l border-gray-300 bg-white-smoke'>
 
-//         <div className="md:w-[80%] h-fit p-5 
+//         <div className="md:w-[80%] h-fit p-5
 //       flex flex-col align-center justify-center
 //         ">
 //           <div className='flex flex-col gap-3'>
