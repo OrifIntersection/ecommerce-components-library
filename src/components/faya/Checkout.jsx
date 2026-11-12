@@ -2,10 +2,14 @@ import { useEffect, useState } from 'react';
 
 import Button from './secondaryComponents/UI/Button.jsx';
 import Checkbox from './secondaryComponents/UI/CheckBox.jsx';
+import ProgressiveBar from './secondaryComponents/UI/ProgressiveBar.jsx';
+import ProgressiveBar2 from './secondaryComponents/UI/ProgressiveBar2.jsx';
 
 import AmericanExpress from '/public/logos/AmericanExpress.jsx';
 import Mastercard from '../../../public/logos/Mastercard.jsx';
 import Visa from '../../../public/logos/Visa.jsx';
+import MastercardLogo from '../../../public/logos/Mastercard-logo.jsx';
+
 
 import './index.css';
 
@@ -48,7 +52,7 @@ function UserForm({ handleForms, forms, title, category }) {
         <input required type="text" placeholder='Adresse' value={forms[category].adress} name={"adress"} className='w-[100%] h-auto border border-gray-400 text-gray-600 p-2 rounded-md' onChange={modificationFormulaire} />
       </div>
       <div className='w-[100%] p-2'>
-        <input type="text" placeholder='Appartement, Etage,...' value={forms[category].details} name={"details"} className='w-[100%] h-auto border border-gray-400 text-gray-600 p-2 rounded-md' onChange={modificationFormulaire} />
+        <input type="text" placeholder='Appartement, Etage,... (facultatif)' value={forms[category].details} name={"details"} className='w-[100%] h-auto border border-gray-400 text-gray-600 p-2 rounded-md' onChange={modificationFormulaire} />
       </div>
       <div className='w-[50%] p-2'>
         <input required type="text" placeholder='CPA (1004, 1201...)' value={forms[category].CPA} name={"CPA"} className='w-[100%] h-auto border border-gray-400 text-gray-600 p-2 rounded-md' onChange={modificationFormulaire} />
@@ -68,12 +72,13 @@ function PaymentIcons({ width }) {
     <Visa width={width} />
     <Mastercard width={width} />
     <AmericanExpress width={width} />
+    <MastercardLogo width={width} />
   </div>)
 }
 
 function CertificationArea({ }) {
   return (<>
-  
+
   </>)
 }
 
@@ -157,69 +162,73 @@ export function Checkout({ children, handleClick, data }) {
   };
 
   return (
-    <div className='min-h-[100%] h-auto flex flex-col md:flex-row w-full min-h-screen overflow-x-hidden box-content '>
-      <section className='flex items-center justify-center w-1/2 min-h-full'>
-        <div className='self-start max-w-200 p-5 pt-20 rounded-2xl'>
-          <Contact forms={forms} handleForms={handleForms} category={'contact'} handleChange={handleCheckbox1} checked={isCheckboxActiveNewsletters} />
-          <UserForm forms={forms} handleForms={handleForms} category={'payment'} title={'Informations de paiement'} />
-          <Checkbox children={'Je souhaite que l’adresse de facturation soit la même que celle de livraison'} onChange={handleCheckbox2} checked={isCheckboxActiveFacturation} />
-          {isCheckboxActiveFacturation ? null : <>
-            <UserForm forms={forms} handleForms={handleForms} category={'facturation'} title={'Informations de facturation'} />
-            <UserForm forms={forms} handleForms={handleForms} category={'facturation'} title={'Informations de facturation'} />
-            <UserForm forms={forms} handleForms={handleForms} category={'facturation'} title={'Informations de facturation'} />
-          </>}
-        </div>
-      </section>
-      {/* min-h-full */}
-      <section className='flex items-center justify-center w-1/2 h-screen border-l border-gray-300 bg-white-smoke'>
-        {/* self-start */}
-        <div className="self-start top-0 sticky md:w-[80%] h-fit pt-20 p-5 rounded-2xl">
-          <div className='flex flex-col gap-3'>
-            <section className="mb-2">
-              <h1 className="font-bold md:text-2xl">Détails de la commande</h1>
-            </section>
+    <div className='flex flex-col items-center min-h-[100%] h-auto w-full min-h-screen overflow-x-hidden box-content '>
+      <div className='absolute flex flex-col justify-center items-center h-auto bg-gray-50/100 z-2 mt-5 px-15 rounded-full shadow-xl'>
+        <ProgressiveBar />
+      </div>
+      <div className='flex flex-col md:flex-row w-full min-h-screen overflow-x-hidden box-content '>
+        <section className='flex items-center justify-center w-1/2 min-h-full'>
+          <div className='self-start max-w-200 p-5 pt-20 rounded-2xl mt-15'>
+            <Contact forms={forms} handleForms={handleForms} category={'contact'} handleChange={handleCheckbox1} checked={isCheckboxActiveNewsletters} />
+            <UserForm forms={forms} handleForms={handleForms} category={'payment'} title={'Informations de paiement'} />
+            <Checkbox children={'Je souhaite que l’adresse de facturation soit la même que celle de livraison'} onChange={handleCheckbox2} checked={isCheckboxActiveFacturation} />
+            {isCheckboxActiveFacturation ? null : <>
+              <UserForm forms={forms} handleForms={handleForms} category={'facturation'} title={'Informations de facturation'} />
+              <UserForm forms={forms} handleForms={handleForms} category={'facturation'} title={'Informations de facturation'} />
+              <UserForm forms={forms} handleForms={handleForms} category={'facturation'} title={'Informations de facturation'} />
+            </>}
+          </div>
+        </section>
+        <section className='flex items-center justify-center w-1/2 min-h-full border-l border-gray-300 bg-white-smoke '>
+          {/* self-start */}
+          <div className="self-start top-0 sticky md:w-[80%] h-fit pt-20 p-5 rounded-2xl mt-15">
+            <div className='flex flex-col gap-3'>
+              <section className="mb-2">
+                <h1 className="font-bold md:text-2xl">Détails de la commande</h1>
+              </section>
 
-            <section className="flex flex-col gap-5 md:my-4 pb-4 md:pb-0">
-              {data.cart?.map((value) => {
-                return (
-                  <div key={value.id} className="flex justify-between items-center text-sm md:text-base">
-                    <div className='flex flex-row items-center justify-center gap-4'>
-                      <img src={value.attributes.image} className='w-15 rounded-md border-1'>
-                      </img>
-                      <h2 className="font-bold text-md">{value.attributes.articleName}</h2>
+              <section className="flex flex-col gap-5 md:my-4 pb-4 md:pb-0">
+                {data.cart?.map((value) => {
+                  return (
+                    <div key={value.id} className="flex justify-between items-center text-sm md:text-base">
+                      <div className='flex flex-row items-center justify-center gap-4'>
+                        <img src={value.attributes.image} className='w-15 rounded-md border-1'>
+                        </img>
+                        <h2 className="font-bold text-md">{value.attributes.articleName}</h2>
+                      </div>
+                      <div>
+                        <h2>{value.attributes.price}</h2>
+                        <h3>{value.attributes.quantity}</h3>
+                      </div>
                     </div>
-                    <div>
-                      <h2>{value.attributes.price}</h2>
-                      <h3>{value.attributes.quantity}</h3>
-                    </div>
-                  </div>
-                );
-              })}
-            </section>
+                  );
+                })}
+              </section>
 
-            <section className="flex flex-row justify-between font-bold  md:text-xl">
-              <h2>Sous-total</h2>
-              <h1>{subtotal} CHF</h1>
-            </section>
+              <section className="flex flex-row justify-between font-bold  md:text-xl">
+                <h2>Sous-total</h2>
+                <h1>{subtotal} CHF</h1>
+              </section>
 
-            <section className="flex flex-row justify-between font-light md:text-lg text-sm">
-              <h2>Frais de livraison</h2>
-              <h2>{freeDelivery ? " aucun" : deliveryCosts + " CHF"}</h2>
+              <section className="flex flex-row justify-between font-light md:text-lg text-sm">
+                <h2>Frais de livraison</h2>
+                <h2>{freeDelivery ? " aucun" : deliveryCosts + " CHF"}</h2>
+              </section>
+              <hr />
+              <section className="flex flex-row justify-between font-bold text-md md:text-2xl ">
+                <h2>TOTAL</h2>
+                <span>{TOTAL} CHF</span>
+              </section>
+            </div>
+            <section className="pt-4">
+              <Button width="full" p="sm" title={children} onClick={handleClick} />
             </section>
-            <hr />
-            <section className="flex flex-row justify-between font-bold text-md md:text-2xl ">
-              <h2>TOTAL</h2>
-              <span>{TOTAL} CHF</span>
+            <section className='pt-4'>
+              <PaymentIcons width="80px" />
             </section>
           </div>
-          <section className="pt-4">
-            <Button width="full" p="sm" title={children} onClick={handleClick} />
-          </section>
-          <section className='pt-4'>
-            <PaymentIcons width="80px" />
-          </section>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }
