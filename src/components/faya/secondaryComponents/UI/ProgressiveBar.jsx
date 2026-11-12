@@ -1,38 +1,30 @@
-import { clsx } from "clsx";
 import { useState } from "react";
-// import '../index.css';
+import clsx from "clsx";
+import '../../index.css'
 
-export default function ProgressiveBar() {
-    const [step, setStep] = useState(1);
-    let wBar = 'w-60'
-    let hBar = 'h-2'
-    let circleValue = '10'
-    let circleProp = 'w-' + circleValue + ' h-' + circleValue;
-    // let className1 = 'w-20';
-    // let className2 = 'w-50';
+export default function ProgressiveBar({total, current, setCurrent, handleProgressiveBarPrev, handleProgressiveBarNext}) {
 
-    const Bar = ({ id }) => <div id={'bar' + id} className={clsx('h-3 border border-blue-components bg-blue-components origin-left transition-transform duration-300 ease-in-out active:scale-x-110', wBar, hBar)}></div >
-    const Circle = ({ id }) => <div id={'circle' + id} className={clsx('bg-blue-components rounded-3xl', circleProp)}></div>;
-    // const Informations = ({ children, className }) => <div className={clsx('text-center', className)}>{children}</div>;
+    // steps
+    const Li = ({ className, nb }) => <li className={clsx('w-[50px] h-[50px] rounded-full bg-[#eee] flex items-center justify-center text-md transition-colors duration-300', current >= nb && 'bg-blue-components text-[#fff]', className)}><span className="number">{nb}</span></li>;
 
     return (<>
-        <div className='flex min-h-20 max-h-30 w-full items-center justify-center'>
-            <Circle id={1} />
-            <Bar id={1} />
-            <Circle id={2} />
-            <Bar id={2} />
-            <Circle id={3} />
-            <Bar id={3} />
-            <Circle id={4} />
+        {/*container*/}
+        <div className="w-[90%] max-w-150 grid gap-[10px] flex">
+            {/*progress-container*/}
+            <div className="relative">
+                {/*progress-bar*/}
+                <div className="absolute w-full h-1 bg-[#eee] top-[50%] -translate-y-1/2 z-[-1]">
+                    {/*progress*/}
+                    <div id="progress" style={{ transform: `scaleX(${(current - 1) / (total - 1)})` }} className="w-full h-full bg-blue-components origin-left duration-300"></div>
+                </div>
+
+                <ol className="list-none flex justify-between transition-all duration-300 transform-none">
+                    <Li className="active test" nb={1} />
+                    <Li className="animate-[pulsate_0.3s_ease-in-out]" nb={2} />
+                    <Li className="animate-[pulsate_0.3s_ease-in-out]" nb={3} />
+                    <Li className="animate-[pulsate_0.3s_ease-in-out]" nb={4} />
+                </ol>
+            </div>
         </div>
-        {/* <div className='flex min-h-auto max-h-30 w-full items-center justify-center'>
-        <Informations className={className1} >Informations</Informations>
-        <Informations className={className2} />
-        <Informations className={className1} >Paiement</Informations>
-        <Informations className={className2} />
-        <Informations className={className1} >Confirmation</Informations>
-        <Informations className={className2} />
-        <Informations className={className1} >Quittance</Informations>
-      </div> */}
-    </>)
+    </>);
 }

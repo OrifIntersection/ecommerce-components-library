@@ -2,8 +2,8 @@
 export default function MastercardLogo({width}) {
 	return (
 		<svg version="1.1" width={width} id="svg3409" inkscape:version="0.91 r13725" sodipodi:docname="MasterCard 2016.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
-			xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-			viewBox="0 0 999.2 776" enable-background="new 0 0 999.2 776" xml:space="preserve">
+			xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+			viewBox="0 0 999.2 776">
 			<path id="XMLID_1775_" inkscape:connector-curvature="0" d="M181.1,774.3v-51.5c0-19.7-12-32.6-32.6-32.6
 				c-10.3,0-21.5,3.4-29.2,14.6c-6-9.4-14.6-14.6-27.5-14.6c-8.6,0-17.2,2.6-24,12v-10.3h-18v82.4h18v-45.5c0-14.6,7.7-21.5,19.7-21.5
 				s18,7.7,18,21.5v45.5h18v-45.5c0-14.6,8.6-21.5,19.7-21.5c12,0,18,7.7,18,21.5v45.5H181.1z M448.1,691.9h-29.2V667h-18v24.9h-16.3

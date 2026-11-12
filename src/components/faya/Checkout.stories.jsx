@@ -13,7 +13,7 @@ export default {
 export const Primary = {
   args: {
     variant: 'primary',
-    children: 'Payer',
+    // children: 'Suivant',
     data: data,
     handleClick: fn(),
   }
