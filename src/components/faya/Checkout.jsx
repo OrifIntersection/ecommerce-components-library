@@ -258,9 +258,9 @@ function Step3({ forms, setForms, data, }) {
   )
 };
 
-export function Checkout({ handleClick, data }) {
+export function Checkout({ handleForms, data }) {
   // Step actuel
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
 
   // Barre progressive
   const [current, setCurrent] = useState(1);
@@ -324,6 +324,8 @@ export function Checkout({ handleClick, data }) {
 
   // Selection de la page
   const renderStep = () => {
+    console.log(userForms);
+
     switch (step) {
       case 1:
         return <Step1 forms={userForms} setForms={setUserForms} data={data} children={children} handleProgressiveBarNext={handleProgressiveBarNext} current={current} total={total} />;

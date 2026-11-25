@@ -15,6 +15,6 @@ export const Primary = {
     variant: 'primary',
     // children: 'Suivant',
     data: data,
-    handleClick: fn(),
+    handleForms: fn(),
   }
 };
