@@ -1,6 +1,7 @@
 import React from 'react';
 import { Checkout } from './Checkout';
 import { fn } from 'storybook/test';
+import { handleForms } from './assets/function/handleForms';
 import data from './data/Cart.json';
 
 export default {
@@ -15,6 +16,6 @@ export const Primary = {
     variant: 'primary',
     // children: 'Suivant',
     data: data,
-    handleForms: fn(),
+    HandleForms: handleForms
   }
 };
